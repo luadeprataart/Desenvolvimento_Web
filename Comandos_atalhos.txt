@@ -1,0 +1,3 @@
+npx create-react-app criando-projeto
+cd criando-projeto
+npm start 
