@@ -1,0 +1,116 @@
+.App {
+  text-align: center;
+
+  color: aliceblue;
+}
+
+.btn {
+  background-color: #21a8b798;
+  border-radius: 30px;
+  border: none;
+  height: 40px;
+  width: 100px;
+  font-size: larger;
+  font-style: initial;
+  color: rgb(64, 92, 92);
+}
+
+.btn:hover {
+  background-color: #74236398;
+  color: aliceblue;
+}
+
+.componte {
+  margin: 10px;
+  animation-name: fade; /*Chamo a animação*/
+  animation-duration: 2s; /*Define tempo*/
+}
+
+.componte.input-block:nth-child(1) {
+  animation-name: move; /*Chamo a animação*/
+  animation-delay: 300ms;
+  animation-duration: 2s;
+}
+
+@keyframes fade {
+  /*Define oq fazer*/
+  from {
+    /*Começa*/
+    opacity: 0;
+    transform: scale(0.7); /*Escala para entrar*/
+    transform: translateY(35%);
+  }
+  to {
+    /*Termina*/
+    opacity: 1;
+    transform: scale(1);
+    transform: translateY(0%);
+    /*transform:translateX*/
+  }
+}
+
+@keyframes move {
+  /*Define oq fazer*/
+  from {
+    /*Começa*/
+    transform: translateX(-35%);
+  }
+  to {
+    /*Termina*/
+
+    transform: translateX(0%);
+    /*transform:translateX*/
+  }
+}
+
+.centro {
+  background-color: #d1d8da68;
+  animation-name: fade; /*Chamo a animação*/
+  animation-duration: 1.5s; /*Define tempo*/
+}
+.centro.input-block:nth-child(1) {
+  animation-name: move; /*Chamo a animação*/
+  animation-delay: 250ms;
+  animation-duration: 1.5s;
+}
+
+.form {
+  text-align: start;
+  background-color: #d1d8da68;
+  padding: 10% 10%;
+  margin: 140px;
+  margin-top: 20px;
+  border-radius: 5px;
+  animation-name: fade; /*Chamo a animação*/
+  animation-duration: 1.8s; /*Define tempo*/
+}
+.form.input-block:nth-child(1) {
+  animation-name: move; /*Chamo a animação*/
+  animation-delay: 250ms;
+  animation-duration: 1.8s;
+}
+
+.compontemaior {
+  width: 50%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
