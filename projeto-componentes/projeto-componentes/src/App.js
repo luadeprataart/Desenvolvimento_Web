@@ -3,6 +3,7 @@ import Header from "./componentes/header";
 import Relogio from "./componentes/relogio";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import Exibir from "./componentes/exibir.js";
 
 function App() {
   const [nome, setNome] = useState();
@@ -10,6 +11,19 @@ function App() {
   const [endereco, setEndereco] = useState();
   const [estado, setEstado] = useState();
   const [tel, setTel] = useState();
+
+  const [cliente, setcliente] = useState([]);
+
+  function enviarValidar(e) {
+    e.preventDefault();
+
+    if (nome === undefined) toast.error("Erro. Nome não pode estar vazio");
+    else {
+      toast.success("Dados Cadastrados! ");
+      let novo = { nome: nome, tel: tel };
+      setcliente([...cliente, novo]);
+    }
+  }
 
   function changeName(e) {
     setNome(e.target.value);
@@ -27,16 +41,6 @@ function App() {
     setTel(e.target.value);
   }
 
-  function enviarValidar(e) {
-    e.preventDefault();
-    window.alert("Dados cadastrados");
-  }
-
-  function enviarValidar(e) {
-    e.preventDefault();
-    if (nome === undefined) toast.error("Erro. Nome não pode estar vazio");
-    else toast.success("Dados Cadastrados! ");
-  }
   return (
     <div className="App">
       <Relogio />
@@ -90,6 +94,8 @@ function App() {
           </div>
         </div>
       </form>
+
+      <Exibir conteudo={cliente} />
     </div>
   );
 }
