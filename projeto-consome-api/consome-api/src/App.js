@@ -10,7 +10,12 @@ function App() {
     setUsers(json.data);
   };
 
-  funcaoAssync();
+  React.useEffect(() => {
+    //melhor criar a função dentro
+    funcaoAssync();
+  }, []);
+
+  // funcaoAssync();
 
   return (
     <div className="flex">

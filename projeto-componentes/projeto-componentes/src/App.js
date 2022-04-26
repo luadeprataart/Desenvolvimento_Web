@@ -21,7 +21,10 @@ function App() {
     else {
       toast.success("Dados Cadastrados! ");
       let novo = { nome: nome, tel: tel };
-      setcliente([...cliente, novo]);
+      setcliente((prev) => {
+        [...prev, novo];
+      }); //melhor maneira para ele não se perder
+      //setcliente([...cliente, novo]); //
     }
   }
 
