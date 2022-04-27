@@ -25,7 +25,7 @@ app.post("/cadastracliente", (req, res) => {
 
 app.delete("/deletacliente/:nome", (req, res) => {
   const nome = req.params.nome; //{nome}
-  const dados = dados.filter((client) => client.nome !== nome);
+  const array = dados.filter((client) => client.nome !== nome);
   res.json({ mensagem: `Cliente ${nome} deletado` });
 });
 
